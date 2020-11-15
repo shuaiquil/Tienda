@@ -1,0 +1,170 @@
+﻿@section AddToHead{
+    <link href="@Url.Content("~/Content/flexslider.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/styles.css")" rel="stylesheet" type="text/css" />
+
+    @model Tienda.Models.ViewModel
+}
+
+@{
+    ViewBag.Title = "Inicio";
+}
+
+<section class="slider-home">
+    <div class="flexslider">
+        <ul class="slides">
+            <li>
+                <img src="/Content/img/picture-1.jpg" />
+            </li>
+            <li>
+                <img src="/Content/img/picture-2.jpg" />
+            </li>
+            <li>
+                <img src="/Content/img/picture-3.jpg" />
+            </li>
+        </ul>
+    </div>
+</section>
+
+<nav class="nav-s">
+
+    <h3>Categorías</h3>
+    <ul>
+        @foreach (var Categoria in Model.Categorias)
+        {
+            if (Categoria.SubCategoria == false)
+            {
+                <li id="@Categoria.IdCategoria"><a href="#">@Categoria.Nombre</a></li>
+            }
+            else if (Categoria.SubCategoria == true)
+            {
+                <li class="submenu" id="@Categoria.IdCategoria">
+                    <a href="#">@Categoria.Nombre<span class="icon-chevron-down"></span></a>
+                    <ul class="children">
+                        @foreach (var SubCategoria in Model.SubCategorias)
+                        {
+                            if (SubCategoria.IdCategoria == Categoria.IdCategoria)
+                            {
+                                <li><a href="#">@SubCategoria.Nombre</a></li>
+                            }
+                        }
+                    </ul>
+                </li>
+            }
+        }
+    </ul>
+</nav>
+
+<section class="productos-destacados">
+
+    <h3>Productos Destacados</h3>
+
+    @foreach (var Producto in Model.Productos)
+    {
+        if (Producto.EsDestacado == true)
+        {
+            <article class="p-articulo" data-close="X" data-img="@Producto.UrlImagen"
+                     data-precio="@Producto.Precio" data-nombre="@Producto.Nombre">
+                <img src=@Producto.UrlImagen>
+                <h6>@Producto.Nombre</h6>
+                <p>@Producto.Precio</p>
+                <a href="#pop-up-container" class="link-see">Ver</a>
+                <br>
+                <a href="#" class="add-cart" onclick="desactivar(this)">Comprar</a>
+            </article>
+        }
+    }
+</section>
+
+<div class="informacion-pop" id="pop-up-container">
+    <a id="close-data" href=""></a>
+    <img src="" id="img-data">
+    <h6 id="nombre-data"></h6>
+    <p id="precio-data"></p>
+    <p id="caracteristica-data"></p>
+    <p id="color-data"></p>
+    <p id="talle-data"></p>
+    <p id="cuota-data"></p>
+    <a id="btn-data" href=""></a>
+    <img src="" id="visa-data" class="tarjetas">
+    <img src="" id="maestro-data" class="tarjetas">
+    <img src="" id="american-data" class="tarjetas">
+</div>
+
+
+
+<section class="ofertas">
+    <h3>Ofertas</h3>
+
+    @foreach (var Producto in Model.Productos)
+    {
+        if (Producto.EsOferta == true)
+        {
+            <article id=@Producto.IdProducto>
+                <img src=@Producto.UrlImagen>
+                <h6>@Producto.Nombre</h6>
+                <p>@Producto.Precio</p>
+                <a href="#" class="link-see">Ver</a>
+                <br>
+                <a href="#" class="add-cart">Comprar</a>
+            </article>
+        }
+    }
+</section>
+
+
+
+<script src="/Scripts/jquery.flexslider.js"></script>
+<script type="text/javascript">
+    //--------------------------------------SLIDER----------------------------------
+    $(window).load(function () {
+        $('.flexslider').flexslider();
+    });
+
+    //---------------------------------------POP UP----------------------------------
+    var elementos = document.querySelectorAll(".p-articulo");
+
+    //For que recorre los elementos que contienen la clase p-articulo
+    for (var i = 0; i < elementos.length; i++) {
+        elementos[i].addEventListener("click", obtenerDatos);
+    }
+
+    //Funcion que obtiene los datos correspientes de la clase que se clickeo
+    function obtenerDatos() {
+
+        //Variable  que almacena la clase correspondiente al POP-UP
+        var contenedor = document.getElementsByClassName('informacion-pop');
+
+        document.getElementById('close-data').innerHTML = this.dataset.close;
+        document.getElementById('img-data').src = this.dataset.img;
+        document.getElementById('precio-data').innerHTML = "Precio: " + this.dataset.precio;
+        document.getElementById('nombre-data').innerHTML = this.dataset.nombre;
+
+        //Datos extra hardcodeados
+        document.getElementById('cuota-data').innerHTML = "HASTA 12 CUOTAS SIN INTERÉS";
+        document.getElementById('visa-data').src = "/Content/img/tarjeta-visa.png";
+        document.getElementById('maestro-data').src = "/Content/img/tarjeta-maestro.png";
+        document.getElementById('american-data').src = "/Content/img/american-express.png";
+        document.getElementById('btn-data').innerHTML = "Agregar al carrito";
+
+        //Aplico estilos dinámicos
+        var cerrarVentana = document.getElementById('close-data');
+        cerrarVentana.onclick = function () { location.reload() };
+        contenedor[0].style.backgroundColor = "white";
+        contenedor[0].style.padding = "20px";
+        contenedor[0].style.border = "5px solid black";
+        imgProducto = document.getElementById('img-data');
+        imgProducto.width = 350;
+        imgProducto.height = 350;
+        btnProducto = document.getElementById('btn-data');
+        btnProducto.style.padding = "8px";
+        btnProducto.onclick = function () { location.reload() };
+        body.style.overflow = "hidden";
+    }
+
+    //Funcion extra
+    function desactivar(e) {
+        alert("No podemos procesar tu solicitud intentelo de nuevo más tarde");
+        location.reload();
+    }
+
+</script>

@@ -1,0 +1,401 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 80%;
+    margin: 0 auto;
+    background: #FFFFFF; 
+    font-size: 16px;
+    font-family: 'Abel', sans-serif;
+    color: #000000;
+}
+
+header{
+    width:100%;
+}
+
+header .container img{
+    float: left;
+    width:260px;
+    height: 120px; 
+    margin-top: 15px;
+    transform:translateY(-10px)
+}
+
+header .container ul{
+    float: right;
+    margin-top: 20px;
+    list-style: none;
+}
+
+header .container ul li{
+    float: left;
+    margin-left: 5px;
+}
+
+
+header .container ul li a{
+    display: inline-block;
+    font-size: 13px;
+    color: #04542c;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.container ul li:first-child{
+    padding-right: 5px;
+    border-right: 1px solid #B4B2B4;
+}
+
+.container ul li:last-child{
+    margin-left: 18px;
+    transform: translateY(-2px);
+}
+
+.container ul li a span{
+    font-size: 20px;
+}
+
+.container ul li:not(:last-child) a:hover{
+    border-bottom: 0.1px solid;
+}
+
+.container ul li:last-child a:hover .icon-cart{
+    opacity: 0.4;
+}
+
+.container a span{
+    margin-right: 3px;
+}
+
+.nav-p{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+    margin: 0px auto;
+    background: #FFFFFF; 
+}
+
+
+.nav-menu{
+    overflow: hidden;
+    list-style: none;
+    margin: 0 auto;
+    background: #FFFFFF;
+}
+
+.nav-menu li{
+    float: left;
+}
+
+.nav-menu li a{
+    display:block;
+    width:200px;
+    text-decoration: none;
+    padding: 5px;
+    color: #04542C;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.nav-menu li a:hover{
+    font-size: 18.5px;
+    border-bottom: 1.5px solid #04542C;
+}
+
+.slider-home{
+    width: 99%;
+    height:550px;   
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.nav-s{
+    float:left;
+    width: 20%;
+    height: 800px;
+    margin: 0;
+}
+
+.nav-s h3{
+    font-size: 23px;
+    font-weight: lighter;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 20px 0;
+    background:#04542c;
+    margin: 50px auto;
+    color: #FFFFFF;
+}
+
+.nav-s ul{
+   list-style: none;
+}
+
+.nav-s ul li{
+    display: block;
+    position: relative;
+}
+
+.nav-s ul li a{
+    display: block;
+    font-size: 18px;
+    font-weight: lighter;
+    text-transform: uppercase;
+    text-align: left;
+    padding: 10px;
+    text-decoration: none;
+    border-bottom: 1px solid #C6D0DA;
+    color: #04542c;
+}
+
+.nav-s ul li a:hover{
+    color: #FFFFFF;
+    background: #04542C;
+}
+
+.nav-s ul li:hover .children{
+    display:block;
+}
+
+.nav-s ul li .children{
+    display:none;
+    padding-left: 20px;
+}
+
+.icon-chevron-down{
+    float: right;
+}
+
+.productos-destacados{
+    float: right;
+    width: 70%;
+}
+
+.productos-destacados h3{
+    font-size: 23px;
+    font-weight: lighter;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 20px 0;
+    background:#04542c;
+    margin: 50px auto;
+    color: #FFFFFF;
+}
+
+.productos-destacados img{
+    width:100%;
+    height: 270px;
+}
+
+.productos-destacados article{
+    float:left;
+    width: 30%;
+    height: 400px;
+    margin: 0 14px;
+    text-align: center;
+}
+
+.productos-destacados article h6{
+    font-size: 20px;
+}
+
+ article .link-see{
+    text-decoration: none;
+    font-weight: bold; 
+    color: #04542c; 
+}
+
+article .add-cart{
+    display:inline-block;
+    font-weight: lighter;
+    text-transform: uppercase;
+    padding: 10px;
+    background: #04542c;
+    color: #FFFFFF;
+    margin-top:10px;
+    text-decoration: none;
+}
+
+article a:hover{
+    text-decoration-line: underline;
+}
+
+
+.informacion-pop{
+    position: absolute;
+    left: 42%;
+    font-size: 18px;
+    text-align: center;
+    width: 550px;
+}
+
+#close-data {
+display:block;
+float:right;
+text-decoration:none;
+}
+
+.informacion-pop p{
+    display: block;
+    padding-left: 10px;
+    text-align: left;
+
+}
+
+.informacion-pop p:nth-child(8){
+    text-transform: uppercase;
+    font-weight: bold;
+    padding-top: 15px;
+    font-size: 15px;
+}
+
+.informacion-pop a{
+    display:inline-block;
+    color: #044625;
+    font-weight: bold;
+}
+
+.tarjetas{
+    float:left;
+    margin-top: 15px;
+    margin-left: 12px;
+}
+
+.informacion-pop #btn-data{
+    margin: auto;
+    margin-top: 35px;
+    font-size: 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold; 
+    background: #04542c;
+    color: #FFFFFF;
+    transform: translateX(-50%);
+}
+
+.informacion-pop #btn-data:hover{
+    opacity: 0.8;
+}
+
+.informacion-pop h6{
+    display: block;
+    text-align: left;
+    padding-left: 8px;
+    padding-bottom: 15px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.ofertas{
+    float:right;
+    width: 70%;
+    height:600px;
+    margin-bottom: 100px;
+}
+.ofertas h3{
+    font-size: 23px;
+    font-weight: lighter;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 20px 0;
+    background:#04542c;
+    margin: 50px auto;
+    color: #FFFFFF;
+}
+
+.ofertas img{
+    width:100%;
+    height: 270px;
+}
+
+.ofertas article{
+    float:left;
+    width: 30%;
+    height: 400px;
+    margin: 0 14px;
+    text-align: center;
+}
+
+.ofertas article h6{
+    font-size: 20px;
+}
+
+.before{
+    text-decoration-line: line-through;
+    color: #A3A3A3;
+}
+
+footer{
+    float: left;
+    width:100%;
+    height: 250px;
+    background: #04542c;
+}
+
+footer section{
+    width: 100%;
+    color: #FFFFFF;
+}
+
+footer section article:not(:last-child){
+    float: left;
+    width: 30%;
+    height: 180px;
+    margin-top: 20px;
+    margin-left:35px;
+    margin-bottom: 50px;
+}
+
+footer section article h4{
+    padding: 5px;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+footer section article p{
+    padding:10px;
+}
+
+.redes-sociales h4{
+    margin-bottom: 100px;
+}
+
+.redes-sociales a {
+    margin: 0 20px;
+    text-decoration: none;
+    padding: 10px;
+    color: #FFFFFF;
+}
+
+.redes-sociales a span {
+    font-size: 25px;
+    padding: 5;
+    width:20px;
+    background: none;
+}
+
+.info-contact a{
+    display: block;
+    margin-top: 10px;
+    padding-left: 10px;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+.copyright{
+    float:left;
+    width: 100%;
+    height: 20px;
+    background: #044625;
+}
+
+.copyright p{
+    text-align: center;
+    font-size: 15px;
+    padding: 0;
+    color:#FFFFFF;
+}

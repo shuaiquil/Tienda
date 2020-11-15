@@ -1,0 +1,87 @@
+﻿@section AddToHead{
+    <link rel='stylesheet' type='text/css' href="@Url.Content("~/Content/contacto.css")">
+
+    @Scripts.Render("~/bundles/scripts")
+}
+
+@{
+    ViewBag.Title = "Contacto";
+}
+
+<section class="form-contacto">
+    <form id="contact-form" method="post">
+        <div class="form-group-name">
+            <label for="name" class="form-label-name">Nombre</label>
+            <br>
+            <input type="text" id="name" class="form-control" name="nombre" required />
+        </div>
+
+        <div class="form-group-email">
+            <label for="email" class="form-label-email">Email</label>
+            <br>
+            <input type="email" id="email" class="form-control" name="email" required />
+        </div>
+
+        <div class="form-group-asunto">
+            <label for="asunto" class="form-label-name">Asunto</label>
+            <br>
+            <input type="text" id="asunto" class="form-asunto" name="asunto" required />
+        </div>
+
+        <div class="form-group-mensaje">
+            <label for="formulario" class="form-dabel-txt">Mensaje</label>
+            <br>
+            <textarea id="mensaje" class="form-mensaje" name="mensaje" required></textarea>
+        </div>
+
+        <p id="mensajeError"></p>
+
+        <input type="submit" class="btn-enviar" id="BtnEnviar" />
+    </form>
+
+</section>
+
+<section class="info-store">
+    <h6>Horarios de atención</h6>
+    <p>Lunes a Sabados de 9:30 a 21:00 hs.</p>
+    <h6>Correo electrónico</h6>
+    <p>info@popper.com.ar</p>
+    <h6>Dirección</h6>
+    <p>Av. San Martin 316</p>
+
+    <div class="map-container">
+        <div id="map">
+        </div>
+    </div>
+</section>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=iniciarMap"></script>
+
+<script type="text/javascript">
+        $("#BtnEnviar").click(function (e) {
+
+                e.preventDefault();
+                e.stopPropagation();
+
+            $.ajax({
+                    url: "@Url.Action("Index","Contacto")",
+                    data: {
+                        Nombre: $("#name").val(),
+                        Correo: $("#email").val(),
+                        Asunto: $("#asunto").val(),
+                        Mensaje: $("#mensaje").val()
+                    },
+                    type: "post",
+                    success: function (data) {
+                        if (data != null) {
+                            alert(data.respuesta);
+                            location.reload();
+                        }
+                    },
+                    error: function (resquest, status, error) {
+                        alert("Error al enviar la informacion");
+                    }
+            });
+        });
+
+</script>

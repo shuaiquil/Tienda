@@ -1,0 +1,271 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 80%;
+    margin: 0 auto;
+    background: #FFFFFF; 
+    font-size: 16px;
+    font-family: 'Abel', sans-serif;
+    color: #000000;
+}
+
+header{
+    width:100%;
+}
+
+header .container img{
+    float: left;
+    width:260px;
+    height: 120px; 
+    margin-top: 15px;
+    transform:translateY(-10px)
+}
+
+header .container ul{
+    float: right;
+    margin-top: 20px;
+    list-style: none;
+}
+
+header .container ul li{
+    float: left;
+    margin-left: 5px;
+}
+
+
+header .container ul li a{
+    display: inline-block;
+    font-size: 13px;
+    color: #04542c;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.container ul li:first-child{
+    padding-right: 5px;
+    border-right: 1px solid #B4B2B4;
+}
+
+
+
+.container ul li a span{
+    font-size: 20px;
+}
+
+.container ul li:not(:last-child) a:hover{
+    border-bottom: 0.1px solid;
+}
+
+.container ul li:last-child a:hover .icon-cart{
+    opacity: 0.4;
+}
+
+.container a span{
+    margin-right: 3px;
+}
+
+.nav-p{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+    margin: 0px auto;
+    background: #FFFFFF; 
+}
+
+.nav-menu{
+    overflow: hidden;
+    list-style: none;
+    margin: 0 auto;
+    background: #FFFFFF;
+}
+
+.nav-menu li{
+    float: left;
+}
+
+.nav-menu li a{
+    display:block;
+    width:200px;
+    text-decoration: none;
+    padding: 5px;
+    color: #04542C;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.nav-menu li a:hover{
+    font-size: 18.5px;
+    border-bottom: 1.5px solid #04542C;
+}
+
+.form-contacto{
+    float: left;
+    width: 45%;
+    height:600px;
+    margin-top: 50px;
+    padding-left: 50px;
+    font-size: 18px;
+}
+
+.form-contacto label{
+    color:#04542c;
+    text-transform: uppercase;
+}
+
+.form-contacto input{
+    width:80%;
+    text-transform: capitalize;
+    height: 30px;
+    border: 1.5px solid #04542c;
+    font-size: 18px;
+    color:#000000;
+    margin-bottom: 20px;
+}
+
+.form-contacto .form-group-email input{
+    text-transform: lowercase;
+}
+
+.form-contacto textarea{
+    width: 80%;
+    height: 230px;
+    border: 1.5px solid #04542c;
+    padding: 0;
+    font-size: 18px;
+    color: #000000;
+    margin-bottom: 30px;
+    text-transform: lowercase;
+ }
+
+.btn-enviar{
+    font-family: 'Abel', sans-serif;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 25px;
+    text-transform: uppercase;
+    display:inline-block;
+    margin:auto;
+    width:20%;
+    height: 35px;
+    color: #04542c;
+}
+
+.btn-enviar:hover{
+    background: #04542c;
+    color: #FFFFFF;
+}
+
+.info-store{
+    float:right;
+    width: 50%;
+    height: 600px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.info-store h6{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 18px;
+    margin-bottom: 10px;
+    color:#04542c;
+
+}
+
+.info-store p{
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: lighter;
+    margin-bottom: 20px;
+    color: #04542c;
+}
+
+
+#map {
+    height: 100%;
+}
+
+.map-container{
+    width: 80%;
+    height: 350px;
+    margin: 0 auto;
+    border-style: solid; 
+    border-width: 4px; 
+    border-color: #04542c;
+
+}
+
+footer{
+    float: left;
+    width:100%;
+    height: 250px;
+    background: #04542c;
+}
+
+footer section{
+    width: 100%;
+    color: #FFFFFF;
+}
+
+footer section article:not(:last-child){
+    float: left;
+    width: 30%;
+    height: 180px;
+    margin-top: 20px;
+    margin-left:35px;
+    margin-bottom: 50px;
+}
+
+footer section article h4{
+    padding: 5px;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+footer section article p{
+    padding:10px;
+}
+
+.redes-sociales h4{
+    margin-bottom: 100px;
+}
+
+.redes-sociales a {
+    margin: 0 20px;
+    text-decoration: none;
+    padding: 10px;
+    color: #FFFFFF;
+}
+
+.redes-sociales a span {
+    font-size: 25px;
+    padding: 5px;
+    width:20px;
+    background: none;
+}
+
+.info-contact a{
+    display: block;
+    margin-top: 10px;
+    padding-left: 10px;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+.copyright{
+    float:left;
+    width: 100%;
+    height: 20px;
+    background: #044625;
+}
+
+.copyright p{
+    text-align: center;
+    font-size: 15px;
+    padding: 0;
+    color:#FFFFFF;
+}
